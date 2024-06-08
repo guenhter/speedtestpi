@@ -4,6 +4,11 @@ This scripts setup a Raspberry PI to
 * periodically (default 10 minutes) make an internet speedtest and store the results locally as json
 * act as an iPerf3 Server to be used for testing the LAN speed (the setup is interactive: Select "Yes" when iperf ask if it should install a daemon)
 
+
+## Scripts
+
+* `setup-speedtest-tools.sh`: Setup all the necessary speedtest tools including the cron job
+
 ## iperf3
 
 To trigger iperf3 on client side, run this command:

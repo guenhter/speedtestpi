@@ -18,7 +18,7 @@ function test_resulting_csv() {
 
 
     # Execute script under test
-    bash "$SCRIPT_DIR"/../results-to-csv.sh "$TEMP_DIR/jsons"
+    bash "$SCRIPT_DIR"/../scripts/results-to-csv.sh "$TEMP_DIR/jsons"
 
 
     # Assertions
@@ -46,7 +46,7 @@ function test_resulting_csv_if_error_file_is_there() {
 
 
     # Execute script under test
-    bash "$SCRIPT_DIR"/../results-to-csv.sh "$TEMP_DIR/jsons"
+    bash "$SCRIPT_DIR"/../scripts/results-to-csv.sh "$TEMP_DIR/jsons"
 
 
     # Assertions

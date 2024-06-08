@@ -22,7 +22,7 @@ function install_periodic_speedtest() {
     curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | bash
     apt-get -y install speedtest
 
-    cp "$SCRIPT_DIR/speedtest-periodic.sh" /opt/speedtest-periodic.sh
+    cp "$SCRIPT_DIR/scripts/*.sh" /opt/
 
     sudo tee  /etc/cron.d/speedtest <<'EOF'
 */10 * * * * root /opt/speedtest-periodic.sh
