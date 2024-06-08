@@ -20,4 +20,5 @@ You acknowledge and agree that the owner reserve the right to change the license
 
 ## Known Issues
 
-* https://bugs.launchpad.net/ubuntu/+source/iperf3/+bug/1996617
+* "speedtest" is not yet released for Ubuntu 24.04
+* iperf3 non-interactive installation issue: https://bugs.launchpad.net/ubuntu/+source/iperf3/+bug/1996617

@@ -16,9 +16,9 @@ apt-get update
 function install_periodic_speedtest() {
     printf "\n== Installing periodic speedtest ==\n"
 
-    # https://www.speedtest.net/de/apps/cli
     apt-get -y install curl jq vim
 
+    # https://www.speedtest.net/de/apps/cli
     curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | bash
     apt-get -y install speedtest
 

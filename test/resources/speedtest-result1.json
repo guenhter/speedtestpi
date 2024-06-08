@@ -1,0 +1,54 @@
+{
+    "type": "result",
+    "timestamp": "2024-06-08T13:17:33Z",
+    "ping": {
+        "jitter": 0.220,
+        "latency": 6.846,
+        "low": 6.535,
+        "high": 6.946
+    },
+    "download": {
+        "bandwidth": 29246873,
+        "bytes": 155377640,
+        "elapsed": 5305,
+        "latency": {
+            "iqm": 12.003,
+            "low": 6.031,
+            "high": 15.926,
+            "jitter": 1.477
+        }
+    },
+    "upload": {
+        "bandwidth": 26668973,
+        "bytes": 291554733,
+        "elapsed": 12123,
+        "latency": {
+            "iqm": 33.250,
+            "low": 5.704,
+            "high": 37.299,
+            "jitter": 2.640
+        }
+    },
+    "isp": "Some ISP",
+    "interface": {
+        "internalIp": "1.2.3.4",
+        "name": "tap0",
+        "macAddr": "00:00:00:00:00:00",
+        "isVpn": true,
+        "externalIp": "42.42.42.42"
+    },
+    "server": {
+        "id": 44437,
+        "host": "speedtest.foo.bar",
+        "port": 8080,
+        "name": "Foobar",
+        "location": "Springfield",
+        "country": "Moon",
+        "ip": "42.42.42.42"
+    },
+    "result": {
+        "id": "some-uuid",
+        "url": "https://www.speedtest.net/result/c/some-uuid",
+        "persisted": true
+    }
+}
