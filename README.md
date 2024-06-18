@@ -111,13 +111,19 @@ An individual file looks like this:
 }
 ```
 
+## Known Issues
+
+* "speedtest" is not yet released for Ubuntu 24.04
+* iperf3 non-interactive installation issue: https://bugs.launchpad.net/ubuntu/+source/iperf3/+bug/1996617
+
 ## Contribution
 
 Contribution are always welcome in any form.
 
 You acknowledge and agree that the owner reserve the right to change the license of the Work, including but not limited to all Contributions previously submitted by You, at any time without the need for approval from You or any other contributor.
 
-## Known Issues
+## License
 
-* "speedtest" is not yet released for Ubuntu 24.04
-* iperf3 non-interactive installation issue: https://bugs.launchpad.net/ubuntu/+source/iperf3/+bug/1996617
+This project is licensed under the [MIT license].
+
+[MIT license]: https://github.com/guenhter/speedtestpi/blob/main/LICENSE
