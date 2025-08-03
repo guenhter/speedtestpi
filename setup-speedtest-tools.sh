@@ -31,6 +31,9 @@ EOF
 
 function install_iperf_server_daemon() {
     printf "\n== Installing iperf server ==\n"
+
+    # This avoids user interaction when installing iperf and tell it
+    echo "iperf3 iperf3/start_daemon boolean true" | debconf-set-selections
     apt-get -y install iperf3
 }
 
