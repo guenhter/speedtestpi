@@ -27,10 +27,14 @@ function install_periodic_speedtest() {
 
     apt-get -y install speedtest
 
-    cp "$SCRIPT_DIR/scripts/*.sh" /opt/
+    chmod +x "$SCRIPT_DIR"/scripts/*.sh
+    cp "$SCRIPT_DIR"/scripts/*.sh /usr/local/bin/
+
+    # Create speedtest results directory
+    mkdir -p /var/lib/speedtest
 
     sudo tee  /etc/cron.d/speedtest <<'EOF'
-*/10 * * * * root /opt/speedtest-periodic.sh
+*/10 * * * * root /usr/local/bin/speedtest-periodic.sh
 EOF
 }
 

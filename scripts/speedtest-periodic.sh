@@ -8,11 +8,12 @@
 ## json, even if it is not valid json syntax.
 ##
 
-RESULTS_ROOT=${1:-/opt/speedtest-results}
+RESULTS_ROOT=${1:-/var/lib/speedtest}
+MEASURES_DIR="$RESULTS_ROOT/measures"
 
-mkdir -p "$RESULTS_ROOT"
+mkdir -p "$MEASURES_DIR"
 
-OUT_FILE="$RESULTS_ROOT/$(date +\%Y-\%m-\%dT\%H:\%M).json"
-ERROR_LOG="$RESULTS_ROOT/errors"
+OUT_FILE="$MEASURES_DIR/$(date +\%Y-\%m-\%dT\%H:\%M).json"
+ERROR_LOG="$MEASURES_DIR/errors"
 
 speedtest -f json --accept-license --accept-gdpr 1>"$OUT_FILE" 2>&1

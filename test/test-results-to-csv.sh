@@ -13,17 +13,17 @@ function test_resulting_csv() {
     printf "\n== Test resulting csv ==\n"
     TEMP_DIR=$(mktemp -d)
 
-    mkdir "$TEMP_DIR/jsons"
-    cp "$SCRIPT_DIR"/resources/*.json "$TEMP_DIR/jsons"
+    mkdir -p "$TEMP_DIR/measures"
+    cp "$SCRIPT_DIR"/resources/*.json "$TEMP_DIR/measures"
 
 
     # Execute script under test
-    bash "$SCRIPT_DIR"/../scripts/results-to-csv.sh "$TEMP_DIR/jsons"
+    bash "$SCRIPT_DIR"/../scripts/results-to-csv.sh "$TEMP_DIR"
 
 
     # Assertions
     if ! [ -f "$TEMP_DIR/all_results.csv" ]; then
-        printf "  Test failed - '$TEMP_DIR/all-results.json' not found\n"
+        printf "  Test failed - '$TEMP_DIR/all_results.csv' not found\n"
         EXIT_CODE=1
     fi
 
@@ -40,18 +40,18 @@ function test_resulting_csv_if_error_file_is_there() {
     printf "\n== Test resulting csv if error json file available ==\n"
     TEMP_DIR=$(mktemp -d)
 
-    mkdir "$TEMP_DIR/jsons"
-    cp "$SCRIPT_DIR"/resources/*.json "$TEMP_DIR/jsons"
-    printf "speedtest-error-result3.json" > "$TEMP_DIR/jsons/some-error.json"
+    mkdir -p "$TEMP_DIR/measures"
+    cp "$SCRIPT_DIR"/resources/*.json "$TEMP_DIR/measures"
+    printf "speedtest-error-result3.json" > "$TEMP_DIR/measures/some-error.json"
 
 
     # Execute script under test
-    bash "$SCRIPT_DIR"/../scripts/results-to-csv.sh "$TEMP_DIR/jsons"
+    bash "$SCRIPT_DIR"/../scripts/results-to-csv.sh "$TEMP_DIR"
 
 
     # Assertions
     if ! [ -f "$TEMP_DIR/all_results.csv" ]; then
-        printf "  Test failed - '$TEMP_DIR/all-results.json' not found\n"
+        printf "  Test failed - '$TEMP_DIR/all_results.csv' not found\n"
         EXIT_CODE=1
     fi
 

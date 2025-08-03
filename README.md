@@ -16,14 +16,14 @@ This repo setup a Raspberry PI to
 
 ### Speedtester
 
-To run the speedtest, the device must just be powered on and connected via a cable to the network. The speedtest runs by default every 10 minutes and makes one internet speedtest. Each result is stored as separate file in the default locatoin under `/opt/speedtest-results`.
+To run the speedtest, the device must just be powered on and connected via a cable to the network. The speedtest runs by default every 10 minutes and makes one internet speedtest. Each result is stored as separate file in the default location under `/var/lib/speedtest/measures/`.
 
-To evaluate the results, the script `/opt/results-to-csv.sh` can be called. It extracts some fields of every result and puts them into one big CSV file under `/opt/all_results.csv`.
+To evaluate the results, the script `/usr/local/bin/results-to-csv.sh` can be called. It extracts some fields of every result and puts them into one big CSV file under `/var/lib/speedtest/all_results.csv`.
 
 To transfer the CSV, just run:
 
 ```bash
-scp pi@speedtestpi:/opt/all_results.csv .
+scp pi@speedtestpi:/var/lib/speedtest/all_results.csv .
 ```
 
 ### iperf3
@@ -38,10 +38,10 @@ iperf3 -c [SERVER_IP]
 
 ### Periodic Speedtest results
 
-The default location `/opt/speedtest-results` will look like this after having the device connected for some hours or days:
+The default location `/var/lib/speedtest/measures/` will look like this after having the device connected for some hours or days:
 
 ```
-pi@speedtestpi:/opt/speedtest-results $ ls
+pi@speedtestpi:/var/lib/speedtest/measures $ ls
 2024-06-03T19:20.json  2024-06-10T21:20.json  2024-06-12T08:20.json
 2024-06-03T19:30.json  2024-06-10T21:30.json  2024-06-12T08:30.json
 2024-06-09T10:40.json  2024-06-10T21:40.json  2024-06-12T08:40.json
