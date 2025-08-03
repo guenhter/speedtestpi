@@ -20,6 +20,11 @@ function install_periodic_speedtest() {
 
     # https://www.speedtest.net/de/apps/cli
     curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | bash
+
+    # Workaround as long as 24.04 is not supported
+    sed -i 's/noble/jammy/g' /etc/apt/sources.list.d/ookla_speedtest-cli.list
+    apt-get update
+
     apt-get -y install speedtest
 
     cp "$SCRIPT_DIR/scripts/*.sh" /opt/
