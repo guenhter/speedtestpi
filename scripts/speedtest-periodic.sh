@@ -14,6 +14,6 @@ MEASURES_DIR="$RESULTS_ROOT/measures"
 mkdir -p "$MEASURES_DIR"
 
 OUT_FILE="$MEASURES_DIR/$(date +\%Y-\%m-\%dT\%H:\%M).json"
-ERROR_LOG="$MEASURES_DIR/errors"
+ERROR_LOG="$RESULTS_ROOT/errors"
 
-speedtest -f json --accept-license --accept-gdpr 1>"$OUT_FILE" 2>&1
+speedtest -f json --accept-license --accept-gdpr 2>&1 | tee "$OUT_FILE"
